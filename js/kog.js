@@ -194,7 +194,7 @@ var kog = function (_, Kotlin) {
     var tmp$, tmp$_0;
     var canvas = Kotlin.isType(tmp$ = document.getElementById('canvas'), HTMLCanvasElement) ? tmp$ : throwCCE();
     var overlay = Kotlin.isType(tmp$_0 = document.getElementById('overlay'), HTMLDivElement) ? tmp$_0 : throwCCE();
-    overlay.innerHTML = '<font color="red">WebGL<\/font>';
+    //overlay.innerHTML = '<font color="red">WebGL<\/font>';
     try {
       var app = new App(canvas, overlay);
       app.registerEventHandlers();
