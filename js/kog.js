@@ -5,10 +5,10 @@ var kog = function (_, Kotlin) {
   'use strict';
   var $$importsForInline$$ = _.$$importsForInline$$ || (_.$$importsForInline$$ = {});
   var Unit = Kotlin.kotlin.Unit;
+  var Kind_CLASS = Kotlin.Kind.CLASS;
   var Error_init = Kotlin.kotlin.Error_init_pdl1vj$;
   var throwCCE = Kotlin.throwCCE;
   var HashSet_init = Kotlin.kotlin.collections.HashSet_init_287e2$;
-  var Kind_CLASS = Kotlin.Kind.CLASS;
   var Error_0 = Kotlin.kotlin.Error;
   var PropertyMetadata = Kotlin.PropertyMetadata;
   var emptySet = Kotlin.kotlin.collections.emptySet_287e2$;
@@ -109,7 +109,7 @@ var kog = function (_, Kotlin) {
     this.canvas = canvas;
     this.overlay = overlay;
     var tmp$, tmp$_0;
-    tmp$ = this.canvas.getContext('webgl2');
+    tmp$ = this.canvas.getContext('webgl2', new App$gl$ObjectLiteral());
     if (tmp$ == null) {
       throw Error_init('Browser does not support WebGL2');
     }
@@ -177,6 +177,13 @@ var kog = function (_, Kotlin) {
   App.prototype.update = function () {
     this.scene.update_yv4vgl$(this.gl, this.keysPressed);
     window.requestAnimationFrame(App$update$lambda(this));
+  };
+  function App$gl$ObjectLiteral() {
+    this.alpha = false;
+  }
+  App$gl$ObjectLiteral.$metadata$ = {
+    kind: Kind_CLASS,
+    interfaces: []
   };
   App.$metadata$ = {
     kind: Kind_CLASS,
@@ -481,7 +488,7 @@ var kog = function (_, Kotlin) {
     this.upborder = 1.0;
     this.downborder = -1.0;
     this.coronaHealth = 150;
-    this.avatarHealth = 75;
+    this.avatarHealth = 100;
     this.moving = false;
     this.avatarDamaged = false;
     this.coronaDamaged = false;
